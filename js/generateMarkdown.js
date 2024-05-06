@@ -52,9 +52,8 @@ function renderLicenseLink(license) {
       return `(https://www.gnu.org/licenses/lgpl-3.0)`;
     
     case `MIT`:
-      return`(https://opensource.org/licenses/MIT)
-      `;
-
+      return`(https://opensource.org/licenses/MIT)`;
+      
     case `Mozilla`:
       return `(https://opensource.org/licenses/MPL-2.0)`;
 
@@ -67,7 +66,6 @@ function renderLicenseLink(license) {
     default:
       return ``;
   }
-
 }
 
 // TODO: Create a function that returns the license section of README
@@ -87,14 +85,12 @@ function renderLicenseSection(license) {
   else  {
     return ``;
   }
-
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
   const licenseBadge = renderLicenseBadge(data.license);
-  // const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
 
   return `
