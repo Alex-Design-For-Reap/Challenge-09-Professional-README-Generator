@@ -123,7 +123,10 @@ ${data.howToContribute}
 ${data.tests}
 
 ## Questions
-${data.questions}
+Access my GitHub page here: (https://github.com/${data.username})
+
+If you have any additional questions, feel free to reach me out through my email: (${data.email})
+
 `;
 }
 

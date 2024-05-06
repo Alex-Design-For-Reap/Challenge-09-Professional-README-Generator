@@ -6,8 +6,6 @@ const { error } = require("console");
 
 const {generateMarkdown} = require(`./generateMarkdown`);
 
-
-
 // TODO: Create an array of questions for user input
 
 inquirer
@@ -41,7 +39,7 @@ inquirer
         {
             type: `input`,
             name: `howToContribute`,
-            message: `Expplain how to contribute to this project:`
+            message: `Explain how to contribute to this project:`
         },
         {
             type: `input`,
@@ -50,34 +48,24 @@ inquirer
         },
         {
             type: `input`,
-            name: `questions`,
-            message: `describe questions for this project:`
+            name: `username`,
+            message: `Enter your GitHub username:`
+        },
+        {
+            type: `input`,
+            name: `email`,
+            message: `Enter your email username:`
         }
+
+
 
     ])
 
     .then((responses) => {
-        // console.log(`your project title is ${responses.title}`);
-        // console.log(`your project description is ${responses.description}`);
-        // console.log(`your required installation is ${responses.installation}`);
-//         const questions = `
-// # ${responses.title},
-// ## ${responses.description},
-// ##${responses.installation}`;
-// console.log(`See your questions here: ${questions}`);
-
-
-// fs.writeFile(`${responses.title}.md`, generateMarkdown, (error) => error? console.log(`something bad happened`) : console.log(`written!!!`));
-
-const myReadmeContent = generateMarkdown(responses);
-writeToFile(myReadmeContent);
-});
+    const myReadmeContent = generateMarkdown(responses);
+    writeToFile(myReadmeContent);
+    });
     
-
-
-
-
-
 
 // // TODO: Create a function to write README file
 function writeToFile(data) {
