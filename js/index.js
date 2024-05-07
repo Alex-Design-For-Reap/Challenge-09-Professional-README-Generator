@@ -13,51 +13,49 @@ inquirer
         {
             type: 'input',
             name: 'title',
-            message: 'Enter the project title:'
+            message: colors.magenta('Enter the project title:')
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Enter the project description:'
+            message: colors.green('Enter the project description:')
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Enter the project installation requirements:'
+            message: colors.yellow('Enter the project installation requirements:')
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide instructions and examples for use:'
+            message: colors.cyan('Provide instructions and examples for use:')
         },
         {
             type: `list`,
             name: 'license',
-            message: `Select the licence you want to use:`,
+            message: colors.white(`Select the licence you want to use:`),
             choices: [`Apache`, `Boost`, `GNU AGPLv3`, `GNU GPLv3`, `GNU LGPLv3`, `MIT`, `The Unlicense`, `N/A`]
         },
         {
             type: `input`,
             name: `howToContribute`,
-            message: `Explain how to contribute to this project:`
+            message: colors.bgBlue(`Explain how to contribute to this project:`)
         },
         {
             type: `input`,
             name: `tests`,
-            message: `Write tests for this application:`
+            message: colors.bgCyan(`Write tests for this application:`)
         },
         {
             type: `input`,
             name: `username`,
-            message: `Enter your GitHub username:`
+            message: colors.bgGreen(`Enter your GitHub username:`)
         },
         {
             type: `input`,
             name: `email`,
-            message: `Enter your email username:`
+            message: colors.bgMagenta(`Enter your email username:`)
         }
-
-
 
     ])
 
@@ -69,7 +67,8 @@ inquirer
 
 // // TODO: Create a function to write README file
 function writeToFile(data) {
-    fs.writeFile(`README.md`, data, (error) => error? console.log(`something bad happened`) : console.log(`written!!!`));
+
+    fs.writeFile(`README.md`, data, (error) => error? console.log(`something bad happened`) : console.log('File written successfully!'));
 }
 
 // fs.writeFile(`${responses.title}.md`, data, (error) => error? console.log(`something bad happened`) : console.log(`written!!!`));
